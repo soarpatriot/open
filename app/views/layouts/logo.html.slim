@@ -9,9 +9,11 @@ html
     = csrf_meta_tags
   body.body-main
     = render 'shared/logo_nav'
-    p class="notice"  #{notice}
-    p class="alert"  #{alert}
     .container
+      - unless alert.blank?
+        p class="alert alert-warning"  #{alert}
+      - unless notice.blank?
+        p class="alert alert-info"  #{notice}
       = yield
     = render 'shared/footer'
 

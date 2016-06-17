@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   layout :layout_by_resource
-
+  before_filter :authenticate_admin!
   protected
     def layout_by_resource
       if devise_controller?

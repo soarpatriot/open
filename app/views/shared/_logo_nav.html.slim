@@ -5,4 +5,9 @@
             span.sr-only
           a.navbar-brand[href="#"]
             | 开放平台
+        ul.nav.navbar-nav.navbar-right
+             - if admin_signed_in?
+                li
+                  = link_to '退出', destroy_admin_session_path, :method => :delete
+
 
