@@ -3,7 +3,7 @@ class Admin::TokensController < ApplicationController
 
   # GET /admin/tokens
   def index
-    @admin_tokens = Admin::Token.all
+    @tokens = Token.all.page params[:page]
   end
 
   # GET /admin/tokens/1
@@ -12,7 +12,7 @@ class Admin::TokensController < ApplicationController
 
   # GET /admin/tokens/new
   def new
-    @admin_token = Admin::Token.new
+    @token = Token.new
   end
 
   # GET /admin/tokens/1/edit
@@ -21,10 +21,10 @@ class Admin::TokensController < ApplicationController
 
   # POST /admin/tokens
   def create
-    @admin_token = Admin::Token.new(admin_token_params)
+    @token = Token.new(admin_token_params)
 
-    if @admin_token.save
-      redirect_to @admin_token, notice: 'Token was successfully created.'
+    if @token.save
+      redirect_to admin_token_url @token, notice: 'Token was successfully created.'
     else
       render :new
     end
@@ -32,8 +32,8 @@ class Admin::TokensController < ApplicationController
 
   # PATCH/PUT /admin/tokens/1
   def update
-    if @admin_token.update(admin_token_params)
-      redirect_to @admin_token, notice: 'Token was successfully updated.'
+    if @token.update(admin_token_params)
+      redirect_to admin_token_url @token, notice: 'Token was successfully updated.'
     else
       render :edit
     end
@@ -41,18 +41,18 @@ class Admin::TokensController < ApplicationController
 
   # DELETE /admin/tokens/1
   def destroy
-    @admin_token.destroy
+    @token.destroy
     redirect_to admin_tokens_url, notice: 'Token was successfully destroyed.'
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_token
-      @admin_token = Admin::Token.find(params[:id])
+      @token = Token.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def admin_token_params
-      params.require(:admin_token).permit(:access_token, :refresh_token, :expired_at, :datatime)
+      params.require(:token).permit(:access_token, :refresh_token, :expired_at, :datatime)
     end
 end

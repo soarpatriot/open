@@ -3,7 +3,7 @@ class Admin::KeysController < ApplicationController
 
   # GET /admin/keys
   def index
-    @keys = Key.all
+    @keys = Key.all.page params[:page]
   end
 
   # GET /admin/keys/1

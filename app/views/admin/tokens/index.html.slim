@@ -10,15 +10,16 @@ table.table
       th
 
   tbody
-    - @admin_tokens.each do |admin_token|
+    - @tokens.each do |admin_token|
       tr
         td = admin_token.access_token
         td = admin_token.refresh_token
         td = admin_token.expired_at
         td = admin_token.datatime
-        td = link_to 'Show', admin_token
         td = link_to 'Edit', edit_admin_token_path(admin_token)
-        td = link_to 'Destroy', admin_token, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Destroy', admin_token_path( admin_token), data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
-
+.row
+  .col-sm-12
+    .pull-right = paginate @tokens, theme: 'twitter-bootstrap-3'

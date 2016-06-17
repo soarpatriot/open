@@ -1,9 +1,12 @@
-
+p.pull-right
+  = link_to '新建', new_admin_key_path, class:"btn btn-primary"
 table.table
   thead
     tr
       th Client Id
       th Client Secret
+      th 创建时间
+      th 更新时间
       th 操作
 
   tbody
@@ -11,11 +14,14 @@ table.table
       tr
         td = admin_key.client_id
         td = admin_key.client_secret
+        td = admin_key.created_at
+        td = admin_key.updated_at
         td
           .btn-group
             = link_to '编辑', edit_admin_key_path(admin_key), class: "btn btn-warning"
             = link_to '删除', admin_key_path(admin_key), class:"btn btn-danger",data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
-
-= link_to '新建', new_admin_key_path
+.row
+  .col-sm-12
+    .pull-right = paginate @keys, theme: 'twitter-bootstrap-3'
