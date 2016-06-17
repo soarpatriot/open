@@ -1,0 +1,21 @@
+
+table.table
+  thead
+    tr
+      th Client
+      th Client secret
+      th 操作
+
+  tbody
+    - @keys.each do |admin_key|
+      tr
+        td = admin_key.client_id
+        td = admin_key.client_secret
+        td
+          .btn-group
+            = link_to '编辑', edit_admin_key_path(admin_key), class: "btn btn-warning"
+            = link_to '删除', admin_key_path(admin_key), class:"btn btn-danger",data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to '新建', new_admin_key_path
