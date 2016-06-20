@@ -217,8 +217,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails_config (0.99.0)
-      config (>= 1.0.0.beta1)
     railties (4.2.6)
       actionpack (= 4.2.6)
       activesupport (= 4.2.6)
@@ -338,6 +336,7 @@ DEPENDENCIES
   capistrano-rvm
   carrierwave
   coffee-rails
+  config
   database_cleaner
   devise
   factory_girl_rails
@@ -355,7 +354,6 @@ DEPENDENCIES
   quiet_assets
   rack-test
   rails (= 4.2.6)
-  rails_config
   rest-client
   rspec-rails
   sass-rails (~> 4.0.3)
