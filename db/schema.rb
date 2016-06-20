@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617085933) do
+ActiveRecord::Schema.define(version: 20160619034101) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",                   limit: 255
@@ -37,15 +37,16 @@ ActiveRecord::Schema.define(version: 20160617085933) do
     t.string   "client_secret", limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "grant_type",    limit: 255
   end
 
   create_table "tokens", force: :cascade do |t|
     t.string   "access_token",  limit: 255
     t.string   "refresh_token", limit: 255
-    t.string   "expired_at",    limit: 255
-    t.string   "datatime",      limit: 255
+    t.datetime "expired_at"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "key_id",        limit: 4
   end
 
 end
