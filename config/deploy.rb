@@ -63,7 +63,6 @@ end
 
 after "deploy:check", "nginx:update_config"
 after "deploy:check", "thin:update_config"
-before "deploy:check", "sidekiq:update_config"
 
 before "deploy:cleanup_assets", "rvm:hook"
 before "deploy:compile_assets", "rvm:hook"

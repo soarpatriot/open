@@ -35,6 +35,7 @@ gem 'gretel'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_tree'
 
+gem 'thin'
 #gem 'grape', '0.7.0'
 #gem 'grape-entity'
 #gem 'grape-swagger'
@@ -46,7 +47,6 @@ group :production do
 end
 
 group :development do
-  gem 'thin'
 
   gem 'quiet_assets'
   gem 'better_errors'
