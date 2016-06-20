@@ -1,5 +1,5 @@
 ul.nav.nav-sidebar 
  li class="#{params[:controller].end_with?('keys')? 'active':''}"
-   = link_to "用户", admin_keys_path
+   = link_to "用户", admin_credentials_path
  li class="#{params[:controller].end_with?('tokens')? 'active':''}"
    = link_to "令牌", admin_tokens_path

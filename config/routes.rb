@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :tokens
   end
   namespace :admin do
-    resources :keys
+    resources :credentials
   end
   devise_for :admins
   root "home#index"

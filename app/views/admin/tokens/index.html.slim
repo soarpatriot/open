@@ -4,7 +4,6 @@ table.table
       th Access token
       th Refresh token
       th Expired at
-      th Datatime
       th
       th
       th
@@ -15,7 +14,6 @@ table.table
         td = admin_token.access_token
         td = admin_token.refresh_token
         td = admin_token.expired_at
-        td = admin_token.datatime
         td = link_to 'Edit', edit_admin_token_path(admin_token)
         td = link_to 'Destroy', admin_token_path( admin_token), data: {:confirm => 'Are you sure?'}, :method => :delete
 
