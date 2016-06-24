@@ -19,7 +19,7 @@ require 'capistrano/rvm'
 # require 'capistrano/chruby'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
-#require 'capistrano/rails/migrations'
+require 'capistrano/rails/migrations'
 require 'erb'
 
 def from_template file
