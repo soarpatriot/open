@@ -1,6 +1,10 @@
 table.table
   thead
     tr
+      th #Id
+      th 客户端名称
+      th 客户端用户名
+      th token 类型
       th Access token
       th Refresh token
       th Expired at
@@ -11,10 +15,14 @@ table.table
   tbody
     - @tokens.each do |admin_token|
       tr
+        td = admin_token.id
+        td = admin_token.credential.try(:client_id)
+        td = admin_token.credential.try(:username)
+        td = admin_token.credential.try(:grant_type)
         td = admin_token.access_token
         td = admin_token.refresh_token
         td = admin_token.expired_at
-        td = link_to 'Edit', edit_admin_token_path(admin_token)
+        //td = link_to 'Edit', edit_admin_token_path(admin_token)
         td = link_to 'Destroy', admin_token_path( admin_token), data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
