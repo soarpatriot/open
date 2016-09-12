@@ -17,7 +17,7 @@ table.table
       tr
         td = admin_token.id
         td = admin_token.credential.try(:client_id)
-        td = admin_token.credential.try(:username)
+        td = admin_token.user_id
         td = admin_token.credential.try(:grant_type)
         td = admin_token.access_token
         td = admin_token.refresh_token
