@@ -54,6 +54,6 @@ class Admin::CredentialsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_credential_params
-      params.require(:credential).permit(:client_id, :client_secret, :grant_type)
+      params.require(:credential).permit(:client_id, :client_secret, :grant_type, :description)
     end
 end

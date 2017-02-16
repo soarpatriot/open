@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621063422) do
+ActiveRecord::Schema.define(version: 20170216093853) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",                   limit: 255
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160621063422) do
     t.string   "grant_type",    limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "description",   limit: 255
   end
 
   create_table "tokens", force: :cascade do |t|
